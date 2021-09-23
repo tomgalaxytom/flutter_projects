@@ -5,7 +5,9 @@ class MyNavigator {
     Navigator.pushNamed(context, "/home");
   }
 
-  static void goToOtpVerification(BuildContext context) {
+  static void goToOtpVerification(
+    BuildContext context,
+  ) {
     Navigator.pushNamed(context, "/otpverification");
   }
 }

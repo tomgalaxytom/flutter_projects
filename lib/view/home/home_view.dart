@@ -1,9 +1,38 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe, unused_import
+
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:iit/my_navigator.dart';
 import 'package:iit/view/animation/fadeanimation.dart';
+import 'package:iit/view/otpverification/verification_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+
+  @override
+  void initState() {
+    super.initState();
+    var initializationSettingsAndroid =
+        const AndroidInitializationSettings('flutter_devs');
+    var initializationSettingsIOs = const IOSInitializationSettings();
+    var initSetttings = InitializationSettings(
+        initializationSettingsAndroid, initializationSettingsIOs);
+
+    flutterLocalNotificationsPlugin.initialize(initSetttings,
+        onSelectNotification: onSelectNotification);
+  }
+
+  Future onSelectNotification(String payload) {
+    return Navigator.pushNamed(context, "/otpverification", arguments: payload);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,9 +160,7 @@ class HomeScreen extends StatelessWidget {
                     FadeAnimation(
                         delay: 2,
                         child: GestureDetector(
-                          onTap: () {
-                            MyNavigator.goToOtpVerification(context);
-                          },
+                          onTap: showNotification,
                           child: Container(
                             height: 50,
                             decoration: BoxDecoration(
@@ -168,5 +195,77 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  Future<void> showNotificationMediaStyle() async {
+    var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
+      'media channel id',
+      'media channel name',
+      'media channel description',
+      color: Colors.red,
+      enableLights: true,
+      largeIcon: DrawableResourceAndroidBitmap("flutter_devs"),
+      styleInformation: MediaStyleInformation(),
+    );
+    var platformChannelSpecifics =
+        NotificationDetails(androidPlatformChannelSpecifics, null);
+    await flutterLocalNotificationsPlugin.show(
+        0, 'notification title', 'notification body', platformChannelSpecifics);
+  }
+
+  Future<void> showBigPictureNotification() async {
+    var bigPictureStyleInformation = const BigPictureStyleInformation(
+        DrawableResourceAndroidBitmap("flutter_devs"),
+        largeIcon: DrawableResourceAndroidBitmap("flutter_devs"),
+        contentTitle: 'flutter devs',
+        htmlFormatContentTitle: true,
+        summaryText: 'summaryText',
+        htmlFormatSummaryText: true);
+    var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+        'big text channel id',
+        'big text channel name',
+        'big text channel description',
+        styleInformation: bigPictureStyleInformation);
+    var platformChannelSpecifics =
+        NotificationDetails(androidPlatformChannelSpecifics, null);
+    await flutterLocalNotificationsPlugin.show(
+        0, 'big text title', 'silent body', platformChannelSpecifics,
+        payload: "big image notifications");
+  }
+
+  Future<void> scheduleNotification() async {
+    var scheduledNotificationDateTime =
+        DateTime.now().add(const Duration(seconds: 5));
+    var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
+      'channel id',
+      'channel name',
+      'channel description',
+      icon: 'flutter_devs',
+      largeIcon: DrawableResourceAndroidBitmap('flutter_devs'),
+    );
+    var iOSPlatformChannelSpecifics = const IOSNotificationDetails();
+    var platformChannelSpecifics = NotificationDetails(
+        androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.schedule(
+        0,
+        'scheduled title',
+        'scheduled body',
+        scheduledNotificationDateTime,
+        platformChannelSpecifics);
+  }
+
+  Future<void> cancelNotification() async {
+    await flutterLocalNotificationsPlugin.cancel(0);
+  }
+
+  showNotification() async {
+    var android = const AndroidNotificationDetails(
+        'id', 'channel ', 'description',
+        priority: Priority.High, importance: Importance.Max);
+    var iOS = const IOSNotificationDetails();
+    var platform = NotificationDetails(android, iOS);
+    await flutterLocalNotificationsPlugin.show(
+        0, 'Flutter devs', 'Flutter Local Notification Demo', platform,
+        payload: 'Welcome to the Local Notification demo ');
   }
 }
