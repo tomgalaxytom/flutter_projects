@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iit/view/animation/FadeAnimation.dart';
+import 'package:iit/my_navigator.dart';
+import 'package:iit/view/animation/fadeanimation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -129,29 +130,34 @@ class HomeScreen extends StatelessWidget {
                     ),
                     FadeAnimation(
                         delay: 2,
-                        child: Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: const LinearGradient(colors: [
-                                Color.fromRGBO(143, 148, 251, 1),
-                                Color.fromRGBO(143, 148, 251, .6),
-                              ])),
-                          child: const Center(
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                        child: GestureDetector(
+                          onTap: () {
+                            MyNavigator.goToOtpVerification(context);
+                          },
+                          child: Container(
+                            height: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                gradient: const LinearGradient(colors: [
+                                  Color.fromRGBO(143, 148, 251, 1),
+                                  Color.fromRGBO(143, 148, 251, .6),
+                                ])),
+                            child: const Center(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         )),
                     const SizedBox(
                       height: 70,
                     ),
-                    FadeAnimation(
+                    const FadeAnimation(
                         delay: 1.5,
-                        child: const Text(
+                        child: Text(
                           "Forgot Password?",
                           style: TextStyle(
                               color: Color.fromRGBO(143, 148, 251, 1)),

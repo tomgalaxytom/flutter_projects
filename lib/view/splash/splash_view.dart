@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     const Padding(
                       padding: EdgeInsets.only(top: 10.0),
                     ),
-                    Text(
+                    const Text(
                       ConstantDetails.splashtitle,
                       style: TextStyle(
                           color: Colors.white,
