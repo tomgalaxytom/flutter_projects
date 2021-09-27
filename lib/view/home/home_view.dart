@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     var initializationSettingsAndroid =
-        const AndroidInitializationSettings('flutter_devs');
+        const AndroidInitializationSettings('mipmap/ic_launcher');
     var initializationSettingsIOs = const IOSInitializationSettings();
     var initSetttings = InitializationSettings(
         initializationSettingsAndroid, initializationSettingsIOs);
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 400,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('images/background.png'),
+                        image: AssetImage('assets/images/background.png'),
                         fit: BoxFit.fill)),
                 child: Stack(
                   children: <Widget>[
@@ -58,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage('images/light-1.png'))),
+                                    image: AssetImage(
+                                        'assets/images/light-1.png'))),
                           ),
                         )),
                     Positioned(
@@ -70,7 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage('images/light-2.png'))),
+                                    image: AssetImage(
+                                        'assets/images/light-2.png'))),
                           )),
                     ),
                     Positioned(
@@ -83,7 +85,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage('images/clock.png'))),
+                                    image:
+                                        AssetImage('assets/images/clock.png'))),
                           )),
                     ),
                     Positioned(
@@ -266,6 +269,6 @@ class _HomeScreenState extends State<HomeScreen> {
     var platform = NotificationDetails(android, iOS);
     await flutterLocalNotificationsPlugin.show(
         0, 'Flutter devs', 'Flutter Local Notification Demo', platform,
-        payload: 'Welcome to the Local Notification demo ');
+        payload: "'1','2','3','4'");
   }
 }

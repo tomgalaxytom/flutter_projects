@@ -68,6 +68,10 @@ class _VerificationState extends State<Verification> {
 
   @override
   Widget build(BuildContext context) {
+    String otp = ModalRoute.of(context)!.settings.arguments as String;
+
+    var ab = (otp.split(',')).toList();
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -88,7 +92,7 @@ class _VerificationState extends State<Verification> {
                 child: Transform.rotate(
                   angle: 38,
                   child: const Image(
-                    image: AssetImage('images/email.png'),
+                    image: AssetImage('assets/images/email.png'),
                   ),
                 ),
               ),
@@ -113,10 +117,10 @@ class _VerificationState extends State<Verification> {
                 textStyle: const TextStyle(fontSize: 20.0, color: Colors.black),
                 underlineColor: Colors.blueAccent,
                 keyboardType: TextInputType.number,
-                length: 6,
-                onCompleted: (String value) {
+                length: 4,
+                onCompleted: (String ab) {
                   setState(() {
-                    _code = value;
+                    _code = ab;
                   });
                 },
                 onEditing: (bool value) {
@@ -156,7 +160,7 @@ class _VerificationState extends State<Verification> {
               MaterialButton(
                 disabledColor: Colors.grey.shade300,
                 height: 50,
-                onPressed: _code.length < 6
+                onPressed: _code.length < 4
                     ? null
                     : () {
                         verify();

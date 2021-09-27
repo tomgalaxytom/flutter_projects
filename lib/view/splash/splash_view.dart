@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     CircleAvatar(
                       backgroundColor: Colors.white,
                       radius: 50.0,
-                      child: Image.asset('images/grievance.png'),
+                      child: Image.asset('assets/images/grievance.png'),
                       // child: Icon(
                       //   Icons.grievance.png,
                       //   color: Colors.greenAccent,
