@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui/theme.dart';
 
+import 'screen/create_account.dart';
 import 'screen/login.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: const LoginPage(title: 'Flutter Demo Home Page'),
+      home: const CreateAccountPage(title: 'Flutter Demo Home Page'),
     );
   }
 }

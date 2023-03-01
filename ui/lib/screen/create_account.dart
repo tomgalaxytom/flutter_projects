@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 
 import '../theme.dart';
 import '../widgets/custombutton.dart';
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key, required String title}) : super(key: key);
+class CreateAccountPage extends StatefulWidget {
+  const CreateAccountPage({Key? key, required String title}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<CreateAccountPage> createState() => _CreateAccountPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _CreateAccountPageState extends State<CreateAccountPage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFF4B39EF),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height ,
         decoration: BoxDecoration(
           color: tertiaryColor,
           image: DecorationImage(
@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
               width: double.infinity,
               height: 450,
               decoration: BoxDecoration(
-                color: secondaryBackgroundColor,
+                color:secondaryBackgroundColor,
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 7,
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                                 fit: BoxFit.fitWidth,
                               ),
                             if (Theme.of(context).brightness == Brightness.dark)
-                              Image.asset(
+                              Image.network(
                                 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png',
                                 width: 200,
                                 height: 60,
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'Welcome Back,',
+                              'Get Started Below,',
                               style: title1,
                             ),
                           ],
@@ -103,16 +103,19 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Expanded(
                               child: TextFormField(
-                                //controller: _model.emailAddressController,
+                               // controller: _model.emailAddressController,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Email Address',
-                                  labelStyle: bodytext1,
+                                  labelStyle:
+                                      bodytext1,
                                   hintText: 'Enter your email here...',
-                                  hintStyle: bodytext1,
+                                  hintStyle:
+                                      bodytext1,
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: lineGreyColor,
+                                      color:
+                                          lineGreyColor,
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(8),
@@ -144,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                                       EdgeInsetsDirectional.fromSTEB(
                                           16, 24, 0, 24),
                                 ),
-                                style: subtitle2,
+                                style: bodytext2,
                                 // validator: _model
                                 //     .emailAddressControllerValidator
                                 //     .asValidator(context),
@@ -162,15 +165,18 @@ class _LoginPageState extends State<LoginPage> {
                             Expanded(
                               child: TextFormField(
                                 //controller: _model.passwordController,
-                                // obscureText: !_model.passwordVisibility,
+                                //obscureText: !_model.passwordVisibility,
                                 decoration: InputDecoration(
                                   labelText: 'Password',
-                                  labelStyle: bodytext1,
+                                  labelStyle:
+                                      bodytext1,
                                   hintText: 'Enter your email here...',
-                                  hintStyle: bodytext1,
+                                  hintStyle:
+                                      bodytext1,
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: lineGreyColor,
+                                      color:
+                                         lineGreyColor,
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(8),
@@ -205,50 +211,43 @@ class _LoginPageState extends State<LoginPage> {
                                     onTap: () => {},
                                     focusNode: FocusNode(skipTraversal: true),
                                     child: Icon(
-                                      Icons.visibility_outlined,
+                                      
+                                         Icons.visibility_off_outlined,
                                       color: Color(0xFF95A1AC),
                                       size: 22,
                                     ),
                                   ),
                                 ),
-                                style: subtitle2,
-                                // validator: _model.passwordControllerValidator
-                                //     .asValidator(context),
+                                style: bodytext2,
+                                
                               ),
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-
-                            TextButton(
-                              onPressed: () {
-                                print('Button-ForgotPassword pressed ...');
-                              },
-                              child: Text("Forgot Password?"),
-                            ),
-
-
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 4, 0),
                               child: MyButton(
-                                onTap: () {
-                                  print('Button-ForgotPassword pressed ...');
-                                },
-                                buttonText: 'Login',
-                              ),
-
+                                buttonText: "Create Account" ,
+                                width: 230,
+                                height: 50,
+                                onTap: (){
+                                print("object");
+                              },),
                             ),
                           ],
                         ),
                       ),
-                      
+
+
+     
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 40),
                         child: Row(
@@ -259,7 +258,7 @@ class _LoginPageState extends State<LoginPage> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               child: Text(
-                                'Don\'t have an account?',
+                                'Already Have an Account?',
                                 style: bodytext1,
                               ),
                             ),
@@ -268,7 +267,7 @@ class _LoginPageState extends State<LoginPage> {
                                 
                                   onPressed: () {},
                                   child: Text(
-                                    "Create Account",
+                                    "Login",
                                     style: TextStyle(
                                         color: turquiseColor,
                                         fontSize: 16,
@@ -279,6 +278,7 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                       ),
+                    
                     
                     ],
                   ),
