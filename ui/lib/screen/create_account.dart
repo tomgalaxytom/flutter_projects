@@ -34,7 +34,7 @@ return Scaffold(
           children: [
             Container(
               width: double.infinity,
-              height: 450,
+              height: 500,
               decoration: BoxDecoration(
                 color:secondaryBackgroundColor,
                 boxShadow: [
@@ -67,17 +67,17 @@ return Scaffold(
                             if (!(Theme.of(context).brightness ==
                                 Brightness.dark))
                               Image.network(
-                                'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png',
+                                'https://www.madrasfilings.com/tax/wp-content/uploads/2020/08/taxportal.png',
                                 width: 200,
-                                height: 60,
-                                fit: BoxFit.fitWidth,
+                                height: 120,
+                                fit: BoxFit.cover,
                               ),
                             if (Theme.of(context).brightness == Brightness.dark)
                               Image.network(
-                                'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png',
+                                'https://www.madrasfilings.com/tax/wp-content/uploads/2020/08/taxportal.png',
                                 width: 200,
-                                height: 60,
-                                fit: BoxFit.fitWidth,
+                                height: 120,
+                                fit: BoxFit.cover,
                               ),
                           ],
                         ),
