@@ -168,8 +168,6 @@ class _HomePageMainState extends State<HomePageMain> {
                               ),
                             ),
                           ),
-
-
                         ],
                       ),
                     ),
@@ -177,412 +175,455 @@ class _HomePageMainState extends State<HomePageMain> {
                 ],
               ),
             ),
+
+            // Column(
+            //   // mainAxisSize: MainAxisSize.max,
+            //   children: [
+            //     Container(
+            //       width: double.infinity,
+            //       height: 190,
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(8.0),
+            //         child: ClipRRect(
+            //           borderRadius: BorderRadius.circular(8.0),
+            //           child: Image.network(
+            //             "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
+            //             fit: BoxFit.cover,
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //     Align(
+            //       alignment: Alignment.topLeft,
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(8.0),
+            //         child: Text(
+            //           "Title 3",
+            //           style: TextStyle(
+            //               fontSize: 20,
+            //               fontWeight: FontWeight.bold,
+            //               color: Colors.black),
+            //         ),
+            //       ),
+            //     ),
+            //
+            //
+            //   ],
+            // ),
+            // Card(
+            //   color: Colors.white,
+            //   shape: RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.circular(15),
+            //
+            //   ),
+            //   child: Column(
+            //     children: [
+            //     Image.network(
+            //       "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
+            //       fit: BoxFit.cover,
+            //       width: double.infinity,
+            //       height: 190,
+            //     ),
+            //       Padding(
+            //         padding: const EdgeInsets.only(left: 16.0,top: 12.0,right: 12.0,bottom: 8.0),
+            //         child: Row(
+            //           mainAxisAlignment: MainAxisAlignment.start,
+            //           crossAxisAlignment: CrossAxisAlignment.center,
+            //           mainAxisSize: MainAxisSize.max,
+            //           children: [
+            //             Text("propertyName",style: TextStyle(
+            //               fontWeight: FontWeight.bold,
+            //               fontSize: 20,
+            //               color: Colors.black
+            //
+            //             ),)
+            //           ],
+            //         ),
+            //       )
+            //
+            //     ],
+            //   ),
+            // )
+
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: secondaryBackgroundColor,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 4,
-                      color: Color(0x32000000),
-                      offset: Offset(0, 2),
-                    ),
-
-                  ],
-                  borderRadius: BorderRadius.circular(8)
+              padding: const EdgeInsets.only(
+                  left: 16.0, top: 0.0, right: 16.0, bottom: 12.0),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
                 ),
-                child: InkWell(
-                  onTap: (){
-
-                  },
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xff32000000),
+                        blurRadius: 4.0,
+                        offset: const Offset(
+                          0.0,
+                          2.0,
+                        ),
+                      ),
+                    ],
+                  ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-
-                      // Hero(
-                      //   tag: "DemoTag",
-                      //   child: Icon(
-                      //     Icons.add,
-                      //     size: 70.0,
-                      //   ),
-                      // ),
-
-
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Hero(
-                          tag: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg' ,
-
-                          transitionOnUserGestures: true,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(0),
-                              topLeft: Radius.circular(8),
-                              topRight: Radius.circular(8),
-                            ),
-                            // child: CachedNetworkImage(
-                            //   imageUrl:
-                            //     'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg',
-                            //   placeholder: (context, url) =>
-                            //   const CircularProgressIndicator(),
-                            //   errorWidget: (context, url, error) => const Icon(Icons.error),
-                            //   width: double.infinity,
-                            //   height: 190,
-                            //   fit: BoxFit.cover,
-                            // ),
-                            child: CachedNetworkImage(
-                              width: double.infinity,
-                              height: 190,
-                              fit: BoxFit.cover,
-                              imageUrl: "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
-                              placeholder: (context, url) => CircularProgressIndicator(),
-                              errorWidget: (context, url, error) => Icon(Icons.error),
-                              cacheManager: CacheManager(
-                                  Config(
-                                    "fluttercampus",
-                                    stalePeriod: const Duration(days: 7),
-                                    //one week cache period
-                                  )
-                              ),
-                            ),
-                          ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(8),
+                          topLeft: Radius.circular(8),
+                          bottomRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          // topRight: 8.0,topLeft: 8.0,bottomRight: 0,bottomLeft: 0
+                        ),
+                        child: Image.network(
+                          "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 190,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Hero(
-                          tag: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg' ,
-
-                          transitionOnUserGestures: true,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(0),
-                              topLeft: Radius.circular(8),
-                              topRight: Radius.circular(8),
-                            ),
-                            // child: CachedNetworkImage(
-                            //   imageUrl:
-                            //     'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg',
-                            //   placeholder: (context, url) =>
-                            //   const CircularProgressIndicator(),
-                            //   errorWidget: (context, url, error) => const Icon(Icons.error),
-                            //   width: double.infinity,
-                            //   height: 190,
-                            //   fit: BoxFit.cover,
-                            // ),
-                            child: CachedNetworkImage(
-                              width: double.infinity,
-                              height: 190,
-                              fit: BoxFit.cover,
-                              imageUrl: "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
-                              placeholder: (context, url) => CircularProgressIndicator(),
-                              errorWidget: (context, url, error) => Icon(Icons.error),
-                              cacheManager: CacheManager(
-                                  Config(
-                                    "fluttercampus",
-                                    stalePeriod: const Duration(days: 7),
-                                    //one week cache period
-                                  )
-                              ),
-                            ),
-                          ),
+                        padding: EdgeInsets.only(
+                            left: 16, top: 12, right: 16, bottom: 8),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Property Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black),
+                            )
+                          ],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Hero(
-                          tag: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg' ,
-
-                          transitionOnUserGestures: true,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(0),
-                              topLeft: Radius.circular(8),
-                              topRight: Radius.circular(8),
-                            ),
-                            // child: CachedNetworkImage(
-                            //   imageUrl:
-                            //     'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg',
-                            //   placeholder: (context, url) =>
-                            //   const CircularProgressIndicator(),
-                            //   errorWidget: (context, url, error) => const Icon(Icons.error),
-                            //   width: double.infinity,
-                            //   height: 190,
-                            //   fit: BoxFit.cover,
-                            // ),
-                            child: CachedNetworkImage(
-                              width: double.infinity,
-                              height: 190,
-                              fit: BoxFit.cover,
-                              imageUrl: "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
-                              placeholder: (context, url) => CircularProgressIndicator(),
-                              errorWidget: (context, url, error) => Icon(Icons.error),
-                              cacheManager: CacheManager(
-                                  Config(
-                                    "fluttercampus",
-                                    stalePeriod: const Duration(days: 7),
-                                    //one week cache period
-                                  )
-                              ),
-                            ),
-                          ),
+                        padding: EdgeInsets.only(
+                            left: 16, top: 12, right: 16, bottom: 8),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Property Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey),
+                            )
+                          ],
                         ),
                       ),
+                      Container(
+                        height: 40,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 16, top: 0, right: 24, bottom: 12),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 24,
+                                color: Color(0xffffa130),
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.only(left: 4),
+                                child: Text("ratingSummaryList",
+                                  style: TextStyle(
 
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey
 
+                                ),),
+
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text("Rating",
+                                  style: TextStyle(
+
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey
+
+                                  ),),
+
+                              )
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 16.0, top: 0.0, right: 16.0, bottom: 12.0),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xff32000000),
+                        blurRadius: 4.0,
+                        offset: const Offset(
+                          0.0,
+                          2.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(8),
+                          topLeft: Radius.circular(8),
+                          bottomRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          // topRight: 8.0,topLeft: 8.0,bottomRight: 0,bottomLeft: 0
+                        ),
+                        child: Image.network(
+                          "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 190,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 16, top: 12, right: 16, bottom: 8),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Property Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 16, top: 12, right: 16, bottom: 8),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Property Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 40,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 16, top: 0, right: 24, bottom: 12),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 24,
+                                color: Color(0xffffa130),
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.only(left: 4),
+                                child: Text("ratingSummaryList",
+                                  style: TextStyle(
 
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey
+
+                                ),),
+
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text("Rating",
+                                  style: TextStyle(
+
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey
+
+                                  ),),
+
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 16.0, top: 0.0, right: 16.0, bottom: 12.0),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xff32000000),
+                        blurRadius: 4.0,
+                        offset: const Offset(
+                          0.0,
+                          2.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(8),
+                          topLeft: Radius.circular(8),
+                          bottomRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          // topRight: 8.0,topLeft: 8.0,bottomRight: 0,bottomLeft: 0
+                        ),
+                        child: Image.network(
+                          "https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg",
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 190,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 16, top: 12, right: 16, bottom: 8),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Property Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 16, top: 12, right: 16, bottom: 8),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Property Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 40,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 16, top: 0, right: 24, bottom: 12),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 24,
+                                color: Color(0xffffa130),
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.only(left: 4),
+                                child: Text("ratingSummaryList",
+                                  style: TextStyle(
+
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey
+
+                                ),),
+
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text("Rating",
+                                  style: TextStyle(
+
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey
+
+                                  ),),
+
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
 
-
-            // Padding(
-            //   padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-            //   child: StreamBuilder<List<PropertiesRecord>>(
-            //     stream: queryPropertiesRecord(
-            //       queryBuilder: (propertiesRecord) =>
-            //           propertiesRecord.orderBy('lastUpdated', descending: true),
-            //     ),
-            //     builder: (context, snapshot) {
-            //       // Customize what your widget looks like when it's loading.
-            //       if (!snapshot.hasData) {
-            //         return Center(
-            //           child: SizedBox(
-            //             width: 50,
-            //             height: 50,
-            //             child: CircularProgressIndicator(
-            //               color: FlutterFlowTheme.of(context).primaryColor,
-            //             ),
-            //           ),
-            //         );
-            //       }
-            //       List<PropertiesRecord> listViewPropertiesRecordList =
-            //           snapshot.data!;
-            //       return ListView.builder(
-            //         padding: EdgeInsets.zero,
-            //         primary: false,
-            //         shrinkWrap: true,
-            //         scrollDirection: Axis.vertical,
-            //         itemCount: listViewPropertiesRecordList.length,
-            //         itemBuilder: (context, listViewIndex) {
-            //           final listViewPropertiesRecord =
-            //               listViewPropertiesRecordList[listViewIndex];
-            //           return Padding(
-            //             padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
-            //             child: Container(
-            //               width: double.infinity,
-            //               decoration: BoxDecoration(
-            //                 color: FlutterFlowTheme.of(context)
-            //                     .secondaryBackground,
-            //                 boxShadow: [
-            //                   BoxShadow(
-            //                     blurRadius: 4,
-            //                     color: Color(0x32000000),
-            //                     offset: Offset(0, 2),
-            //                   )
-            //                 ],
-            //                 borderRadius: BorderRadius.circular(8),
-            //               ),
-            //               child: InkWell(
-            //                 onTap: () async {
-            //                   await Navigator.push(
-            //                     context,
-            //                     MaterialPageRoute(
-            //                       builder: (context) => PropertyDetailsWidget(
-            //                         propertyRef: listViewPropertiesRecord,
-            //                       ),
-            //                     ),
-            //                   );
-            //                 },
-            //                 child: Column(
-            //                   mainAxisSize: MainAxisSize.max,
-            //                   children: [
-            //                     Hero(
-            //                       tag: valueOrDefault<String>(
-            //                         listViewPropertiesRecord.mainImage,
-            //                         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg' +
-            //                             '$listViewIndex',
-            //                       ),
-            //                       transitionOnUserGestures: true,
-            //                       child: ClipRRect(
-            //                         borderRadius: BorderRadius.only(
-            //                           bottomLeft: Radius.circular(0),
-            //                           bottomRight: Radius.circular(0),
-            //                           topLeft: Radius.circular(8),
-            //                           topRight: Radius.circular(8),
-            //                         ),
-            //                         child: CachedNetworkImage(
-            //                           imageUrl: valueOrDefault<String>(
-            //                             listViewPropertiesRecord.mainImage,
-            //                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg',
-            //                           ),
-            //                           width: double.infinity,
-            //                           height: 190,
-            //                           fit: BoxFit.cover,
-            //                         ),
-            //                       ),
-            //                     ),
-            //                     Padding(
-            //                       padding: EdgeInsetsDirectional.fromSTEB(
-            //                           16, 12, 16, 8),
-            //                       child: Row(
-            //                         mainAxisSize: MainAxisSize.max,
-            //                         children: [
-            //                           Expanded(
-            //                             child: Text(
-            //                               listViewPropertiesRecord.propertyName!
-            //                                   .maybeHandleOverflow(
-            //                                 maxChars: 36,
-            //                                 replacement: '…',
-            //                               ),
-            //                               style: title2,
-            //                             ),
-            //                           ),
-            //                         ],
-            //                       ),
-            //                     ),
-            //                     Padding(
-            //                       padding: EdgeInsetsDirectional.fromSTEB(
-            //                           16, 0, 16, 8),
-            //                       child: Row(
-            //                         mainAxisSize: MainAxisSize.max,
-            //                         children: [
-            //                           Expanded(
-            //                             child: Text(
-            //                               listViewPropertiesRecord
-            //                                   .propertyNeighborhood!
-            //                                   .maybeHandleOverflow(
-            //                                 maxChars: 90,
-            //                                 replacement: '…',
-            //                               ),
-            //                               style: FlutterFlowTheme.of(context)
-            //                                   .bodyText1,
-            //                             ),
-            //                           ),
-            //                         ],
-            //                       ),
-            //                     ),
-            //                     StreamBuilder<List<ReviewsRecord>>(
-            //                       stream: queryReviewsRecord(
-            //                         queryBuilder: (reviewsRecord) =>
-            //                             reviewsRecord.where('propertyRef',
-            //                                 isEqualTo: listViewPropertiesRecord
-            //                                     .reference),
-            //                       ),
-            //                       builder: (context, snapshot) {
-            //                         // Customize what your widget looks like when it's loading.
-            //                         if (!snapshot.hasData) {
-            //                           return Center(
-            //                             child: SizedBox(
-            //                               width: 50,
-            //                               height: 50,
-            //                               child: CircularProgressIndicator(
-            //                                 color: FlutterFlowTheme.of(context)
-            //                                     .primaryColor,
-            //                               ),
-            //                             ),
-            //                           );
-            //                         }
-            //                         List<ReviewsRecord>
-            //                             containerReviewsRecordList =
-            //                             snapshot.data!;
-            //                         return Container(
-            //                           height: 40,
-            //                           decoration: BoxDecoration(),
-            //                           child: Padding(
-            //                             padding: EdgeInsetsDirectional.fromSTEB(
-            //                                 16, 0, 24, 12),
-            //                             child:
-            //                                 StreamBuilder<List<ReviewsRecord>>(
-            //                               stream: queryReviewsRecord(
-            //                                 queryBuilder: (reviewsRecord) =>
-            //                                     reviewsRecord.where(
-            //                                         'propertyRef',
-            //                                         isEqualTo:
-            //                                             listViewPropertiesRecord
-            //                                                 .reference),
-            //                                 singleRecord: true,
-            //                               ),
-            //                               builder: (context, snapshot) {
-            //                                 // Customize what your widget looks like when it's loading.
-            //                                 if (!snapshot.hasData) {
-            //                                   return Center(
-            //                                     child: SizedBox(
-            //                                       width: 50,
-            //                                       height: 50,
-            //                                       child:
-            //                                           CircularProgressIndicator(
-            //                                         color: FlutterFlowTheme.of(
-            //                                                 context)
-            //                                             .primaryColor,
-            //                                       ),
-            //                                     ),
-            //                                   );
-            //                                 }
-            //                                 List<ReviewsRecord>
-            //                                     ratingBarReviewsRecordList =
-            //                                     snapshot.data!;
-            //                                 final ratingBarReviewsRecord =
-            //                                     ratingBarReviewsRecordList
-            //                                             .isNotEmpty
-            //                                         ? ratingBarReviewsRecordList
-            //                                             .first
-            //                                         : null;
-            //                                 return Row(
-            //                                   mainAxisSize: MainAxisSize.max,
-            //                                   children: [
-            //                                     Icon(
-            //                                       Icons.star_rounded,
-            //                                       color: Color(0xFFFFA130),
-            //                                       size: 24,
-            //                                     ),
-            //                                     Padding(
-            //                                       padding: EdgeInsetsDirectional
-            //                                           .fromSTEB(4, 0, 0, 0),
-            //                                       child: Text(
-            //                                         functions.ratingSummaryList(
-            //                                             containerReviewsRecordList
-            //                                                 .toList()),
-            //                                         style: FlutterFlowTheme.of(
-            //                                                 context)
-            //                                             .bodyText1,
-            //                                       ),
-            //                                     ),
-            //                                     Padding(
-            //                                       padding: EdgeInsetsDirectional
-            //                                           .fromSTEB(2, 0, 0, 0),
-            //                                       child: Text(
-            //                                         'Rating',
-            //                                         style: FlutterFlowTheme.of(
-            //                                                 context)
-            //                                             .bodyText1,
-            //                                       ),
-            //                                     ),
-            //                                   ],
-            //                                 );
-            //                               },
-            //                             ),
-            //                           ),
-            //                         );
-            //                       },
-            //                     ),
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //           );
-            //         },
-            //       );
-            //     },
-            //   ),
-            // ),
           ],
         ),
       ),
