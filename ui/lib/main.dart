@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui/screen/propertyDetails.dart';
 import 'package:ui/theme.dart';
 
 import 'screen/create_account.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: const HomePageMain(title: 'Flutter Demo Home Page'),
+      home: const PropertyDetails(title: 'Flutter Demo Home Page'),
     );
   }
 }
