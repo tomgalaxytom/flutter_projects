@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731190171203",
+    "project_id": "my-fb-msg-project",
+    "storage_bucket": "my-fb-msg-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731190171203:android:83a2d40e9b712520a8e6f6",
+        "android_client_info": {
+          "package_name": "com.codelooms.messaging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCps-_pkXIV3XZ1dnRQ-rZ6JqemMDjrwqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
