@@ -6,5 +6,13 @@ This is flutter project
 3.Dart very important
 4.Flutter very important ui
 
+New Projects Creation:
+
+flutter create fluttercookbook --template=app --platforms=ios,android,macos,web --org=com.codelooms
+
+Firebase Quick Flutter Github:
+
+https://github.com/firebase/quickstart-flutter/tree/main
+
 
 
