@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "377505654761",
+    "project_id": "my-storage-fb-project",
+    "storage_bucket": "my-storage-fb-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377505654761:android:e9ff6f2be7508838d98d78",
+        "android_client_info": {
+          "package_name": "com.codelooms.storage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_nX415iW1NDNXfOglOjqIrMkPmaMSQsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

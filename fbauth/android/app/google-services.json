@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1025081132596",
+    "project_id": "authfb",
+    "storage_bucket": "authfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025081132596:android:928214e9cd17c6303c2c61",
+        "android_client_info": {
+          "package_name": "com.codelooms.fbauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvwaPs4THfrVTu3a6pptAFTiDEyZTTEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

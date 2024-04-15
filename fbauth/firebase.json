@@ -1,0 +1,41 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "authfb",
+          "appId": "1:1025081132596:android:928214e9cd17c6303c2c61",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "authfb",
+          "appId": "1:1025081132596:ios:6076f38a413bf6143c2c61",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "authfb",
+          "appId": "1:1025081132596:ios:6076f38a413bf6143c2c61",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "authfb",
+          "configurations": {
+            "android": "1:1025081132596:android:928214e9cd17c6303c2c61",
+            "ios": "1:1025081132596:ios:6076f38a413bf6143c2c61",
+            "macos": "1:1025081132596:ios:6076f38a413bf6143c2c61",
+            "web": "1:1025081132596:web:1b4d16786e453ab43c2c61"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {}
+}
