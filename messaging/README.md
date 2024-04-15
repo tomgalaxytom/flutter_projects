@@ -15,26 +15,3 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-Cloud Firebase Message :
-
-
-https://console.firebase.google.com/project/my-fb-msg-project/messaging
-
-create a New Compaign:
-
-Enter Notification Title:
-
-Enter Notification Text:
-click send test message:
-
-pop up display
-
-Enter Add a FCM registration Token
-Then check checkbox and click Test.Then go to Vs code console
-
-
-I/flutter (28023): Got a message in the foreground
-I/flutter (28023): message data: {}
-I/flutter (28023): Notification Title: One  // title
-I/flutter (28023): Notification Body: One India Tamil 35 //Text 
-I/flutter (28023): message is a notification
