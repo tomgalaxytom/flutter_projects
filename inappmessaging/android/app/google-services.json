@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089258208524",
+    "project_id": "my-inapp-pro",
+    "storage_bucket": "my-inapp-pro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089258208524:android:8d8f0157dcf9f9f22f9d29",
+        "android_client_info": {
+          "package_name": "com.codelooms.inappmessaging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnYX95Zm1_tepqAo2URdZV3x7HtypGYyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

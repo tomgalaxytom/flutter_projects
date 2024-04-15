@@ -54,5 +54,15 @@ I/flutter (28023): Notification Title: One  // title
 I/flutter (28023): Notification Body: One India Tamil 35 //Text 
 I/flutter (28023): message is a notifications
 
+Firebase inApp Message:
+
+https://github.com/firebase/quickstart-flutter/tree/main/inappmessaging
+
+When button click it goes to codelooms.com
+
+Enable Inapp API
+
+https://console.cloud.google.com/apis/api/firebaseinappmessaging.googleapis.com/metrics?project=my-inapp-pro
+
 
 
