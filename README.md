@@ -14,5 +14,20 @@ Firebase Quick Flutter Github:
 
 https://github.com/firebase/quickstart-flutter/tree/main
 
+FLutter CLI:
+
+flutterfire  configure
+
+flutter pub add firebase_core
+
+ flutter pub add firebase_auth
+
+flutter pub add firebase_ui_auth
+
+firebase emulators:start //optional
+
+firebase init emulators //optional
+
+
 
 
