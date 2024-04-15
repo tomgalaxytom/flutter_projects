@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "847933056197",
+    "project_id": "my-fstore-project",
+    "storage_bucket": "my-fstore-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847933056197:android:ad0a5e23ed279edea23cac",
+        "android_client_info": {
+          "package_name": "com.codelooms.firestore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVp0O_wKLe1_AFrr5vHgIYKlQjj7B16G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
