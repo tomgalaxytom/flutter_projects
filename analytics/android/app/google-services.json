@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1034162289688",
+    "project_id": "my-anyself-project",
+    "storage_bucket": "my-anyself-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034162289688:android:3f01f2163e1dc5a59d576d",
+        "android_client_info": {
+          "package_name": "com.codelooms.analytics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyYMG8EwbJnyYWtRqV1FigXzhe8F3MK9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

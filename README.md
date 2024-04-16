@@ -74,3 +74,13 @@ Package Name:com.codelooms.com.admob
 
 Go and check
 flutter_projects/admob/admob_images
+
+
+Google Analyticts:
+
+https://console.firebase.google.com/project/my-anyself-project/analytics/app/android:com.codelooms.analytics/streamview/realtime~2Foverview%3Fparams%3D_u..pageSize%253D25%2526_r.explorerCard..selmet%253D%255B%2522eventCount%2522%255D%2526_r.explorerCard..seldim%253D%255B%2522eventName%2522%255D%2526_r..layout.pageNumber%253D0&fpn%3D1034162289688
+
+Select Realtime Analytics menu is located sidebar menu
+
+Go and check
+flutter_projects/Analytics/images
