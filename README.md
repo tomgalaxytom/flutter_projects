@@ -84,3 +84,119 @@ Select Realtime Analytics menu is located sidebar menu
 
 Go and check
 flutter_projects/Analytics/images
+
+
+
+Json Deserialize:  
+
+https://www.youtube.com/watch?v=8fFoLs9qVQA
+
+https://drive.google.com/file/d/1yN1budCwbtG-CUVOJN_nglN1Ff61npZy/view
+
+Sample json:
+
+[
+    {
+        "name": "User One",
+        "phone": "7777777777",
+        "email": "userone@gmail.com",
+        "subscription": true,
+        "address": {
+            "street": "Some Street",
+            "landmark": "Some Landmark",
+            "city": "Some City",
+            "state": "Some City"
+        }
+    },
+    {
+        "name": "User Two",
+        "phone": "8888888888",
+        "email": "usertwo@gmail.com",
+        "subscription": true,
+        "address": {
+            "street": "Some Street",
+            "landmark": "Some Landmark",
+            "city": "Some City",
+            "state": "Some City"
+        }
+    },
+    {
+        "name": "User Three",
+        "phone": "9999999999",
+        "email": "userthree@gmail.com",
+        "subscription": true,
+        "address": {
+            "street": "Some Street",
+            "landmark": "Some Landmark",
+            "city": "Some City",
+            "state": "Some City"
+        }
+    },
+    {
+        "name": "User Four",
+        "phone": "4444444444",
+        "email": "userfour@gmail.com",
+        "subscription": true,
+        "address": {
+            "street": "Some Street",
+            "landmark": "Some Landmark",
+            "city": "Some City",
+            "state": "Some City"
+        }
+    }
+]
+Packages
+dependencies:
+  json_annotation: ^3.0.1
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  build_runner: ^1.0.0
+  json_serializable: ^3.3.0
+
+Model:
+
+user.dart
+
+import 'package:json_annotation/json_annotation.dart';
+import 'address.dart';
+part 'user.g.dart';
+
+@JsonSerializable(explicitToJson: true)
+class User {
+  String name, phone, email;
+  bool subscription;
+  Address address;
+
+  User({this.name, this.phone, this.email, this.subscription, this.address});
+
+  factory User.fromJson(Map<String,dynamic> data) => _$UserFromJson(data);
+
+  Map<String,dynamic> toJson() => _$UserToJson(this);
+
+}
+
+address.dart
+
+import 'package:json_annotation/json_annotation.dart';
+part 'address.g.dart';
+
+@JsonSerializable()
+class Address {
+  String street,landmark,city,state;
+
+  Address({this.street,this.landmark,this.city,this.state});
+
+  factory Address.fromJson(Map<String,dynamic> data) => _$AddressFromJson(data);
+
+  Map<String,dynamic> toJson() => _$AddressToJson(this);
+
+}
+Cmd:
+flutter pub run build_runner build
+
