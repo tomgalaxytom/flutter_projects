@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "29541564075",
+    "project_id": "my-amob-project",
+    "storage_bucket": "my-amob-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29541564075:android:67b44e500a33bb993641ee",
+        "android_client_info": {
+          "package_name": "com.codelooms.admob"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC49nCowd8vm53zPWFHIwUgx7AdRV2g5Mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
