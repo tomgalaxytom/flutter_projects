@@ -200,3 +200,12 @@ class Address {
 Cmd:
 flutter pub run build_runner build
 
+
+Rivaan Rawath Bloc tutorial Bloc:
+
+https://github.com/RivaanRanawat/flutter_bloc_tutorial
+
+https://github.com/AmanNegi?tab=repositories
+
+
+https://github.com/markclow/flutter_book_examples

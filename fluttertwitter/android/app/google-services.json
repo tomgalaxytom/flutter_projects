@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "834076923749",
+    "project_id": "my-fwitter-project",
+    "storage_bucket": "my-fwitter-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834076923749:android:94779b5c5ef3ee6421f38c",
+        "android_client_info": {
+          "package_name": "com.codelooms.fluttertwitter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGciYtJVKYuQilwVVbm6a0Eny-u8nyblo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
