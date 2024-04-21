@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "932443134331",
+    "project_id": "my-horlicks-projects",
+    "storage_bucket": "my-horlicks-projects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932443134331:android:4e56461b85cd79066445de",
+        "android_client_info": {
+          "package_name": "com.codelooms.analytics_integration"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7-z0jrrBxnESFTRYmTM1OCvi0FSP_qvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

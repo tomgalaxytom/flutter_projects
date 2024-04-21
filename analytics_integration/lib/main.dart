@@ -1,125 +1,160 @@
+import 'package:analytics_integration/single_item_tile.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const FlutterAnalyticsApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FlutterAnalyticsApp extends StatelessWidget {
+  /// create instance of FirebaseAnalytics as [analytics]
+  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
-  // This widget is the root of your application.
+  /// create observer for FirebaseAnalytics as [observer]
+  /// this observer sends events to Firebase Analytics when the
+  /// currently active route changes.
+  static FirebaseAnalyticsObserver observer =
+      FirebaseAnalyticsObserver(analytics: analytics);
+
+  const FlutterAnalyticsApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Analytics',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+      /// this is used to observe navigation changes in the app
+      /// and sending data back to Firebase Analytics
+      navigatorObservers: <NavigatorObserver>[observer],
+      home: FlutterAnalyticsHome(
+        title: 'Flutter Analytics',
+        analytics: analytics,
+        observer: observer,
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
+class FlutterAnalyticsHome extends StatefulWidget {
   final String title;
+  final FirebaseAnalytics analytics;
+  final FirebaseAnalyticsObserver observer;
+
+  const FlutterAnalyticsHome({
+    super.key,
+    required this.title,
+    required this.analytics,
+    required this.observer,
+  });
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _FlutterAnalyticsHomeState createState() => _FlutterAnalyticsHomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _FlutterAnalyticsHomeState extends State<FlutterAnalyticsHome> {
+  late FirebaseAnalytics _analytics;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  @override
+  void initState() {
+    /// initializing data to local variable [_analytics] for Firebase Analytics
+    /// that we made before for local use
+    _analytics = widget.analytics;
+    //// below three events are related to user which we are
+    //// sending to Firebase Analytics
+    _setUserIdInAnalytics();
+    _setUserPropertyInAnalytics();
+    _currentScreen();
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Center(
+          child: Text(widget.title),
+        ),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          shrinkWrap: true,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            const SizedBox(
+              height: 16,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            SingleItemTile(
+              itemName: 'Carrot',
+              analytics: _analytics,
+              quantity: 1,
+              price: '100Rs',
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            SingleItemTile(
+              itemName: 'Baby Carrot',
+              analytics: _analytics,
+              quantity: .5,
+              price: '50Rs',
+            ),
+            const SizedBox(
+              height: 16,
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  //// to create a unique user identifier for Analytics
+  //// send user id(if you app has)
+  Future<void> _setUserIdInAnalytics() async {
+    await _analytics.setUserId(id: 'alksj39hnfn49skvnghqwp40sm');
+  }
+
+  //// sending user related field to Analytics
+  /// below [name] is the name of the user property to set
+  /// [value] is the values of that property
+  // Future<void> _setUserPropertyInAnalytics() async {
+  //   await _analytics.setUserProperty(
+  //     name: 'email',
+  //     value: 'stalingalaxy@gmail.com.com',
+  //   );
+  // }
+  Future<void> _setUserPropertyInAnalytics() async {
+    try {
+      await _analytics.setUserProperty(
+        name: 'email',
+        value: 'stalingalaxy@gmail.com.com',
+      );
+      print('User property set successfully');
+    } catch (e) {
+      print('Error setting user property: $e');
+    }
+  }
+
+  /// Setting the current Screen of the app in [screenName]
+  /// and sending back to Analytics
+  Future<void> _currentScreen() async {
+    // ignore: deprecated_member_use
+    await _analytics.setCurrentScreen(
+      screenName: 'FlutterAnalyticsHome',
+      screenClassOverride: 'FlutterAnalyticsHome',
     );
   }
 }
