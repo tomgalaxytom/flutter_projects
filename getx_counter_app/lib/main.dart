@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 //import get package
 import 'package:get/get.dart';
 
+import 'gridviewpage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,11 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      //home: const MyHomePage(),
+      home: const MyGridView(),
     );
   }
 }
@@ -65,11 +69,11 @@ class MyHomePage extends StatelessWidget {
             FloatingActionButton(
               // we can plus or everything that we want by add .value method to our obs variable
               onPressed: () {
-              // Check if counter is greater than 0 before decrementing
-              if (counter.value > 0) {
-                counter.value--;
-              }
-            },
+                // Check if counter is greater than 0 before decrementing
+                if (counter.value > 0) {
+                  counter.value--;
+                }
+              },
               tooltip: 'Decrement',
               child: const Icon(Icons.remove),
             ),
