@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "106881328405",
+    "project_id": "my-dil-push-notify",
+    "storage_bucket": "my-dil-push-notify.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106881328405:android:27a12cfa7eea7b4536751c",
+        "android_client_info": {
+          "package_name": "com.codelooms.push_notifications"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7bh7aGstLsNL4S-17Xr0SJf3zmyCJvIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
