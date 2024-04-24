@@ -209,3 +209,17 @@ https://github.com/AmanNegi?tab=repositories
 
 
 https://github.com/markclow/flutter_book_examples
+
+
+Mobile_Scanner Projects in Flutter:
+
+
+Url:
+
+https://pub.dev/packages/mobile_scanner/example
+
+git codes:
+
+https://github.com/juliansteenbakker/mobile_scanner/tree/master
+
+check javafile(File Name) in Stalin galaxy's Drive
