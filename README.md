@@ -223,3 +223,48 @@ git codes:
 https://github.com/juliansteenbakker/mobile_scanner/tree/master
 
 check javafile(File Name) in Stalin galaxy's Drive
+
+
+Model View Presenter Example:
+
+// Model
+class UserData {
+  final String name;
+  final int age;
+
+  UserData(this.name, this.age);
+}
+
+// View
+class UserView {
+  void displayUserData(UserData data) {
+    print("Name: ${data.name}, Age: ${data.age}");
+  }
+}
+
+// Presenter
+class UserPresenter {
+  final UserView _view;
+
+  UserPresenter(this._view);
+
+  void fetchUserData() {
+    // Assume data is fetched from an API
+    UserData userData = UserData("John Doe", 30);
+    _view.displayUserData(userData);
+  }
+}
+
+// Usage
+void main() {
+  UserView view = UserView();
+  UserPresenter presenter = UserPresenter(view);
+  presenter.fetchUserData();
+}
+
+
+output:
+
+Name: John Doe, Age: 30
+
+
