@@ -28,28 +28,24 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: todo
-            .map(
-              (person) => InkWell(
+      body: ListView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            return GestureDetector(
                 onTap: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailsPage(person: person),
-                    ),
-                  );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              DetailsPage(person: todo[index])));
                 },
                 child: Card(
                   child: ListTile(
-                    title: Text("${person.firstName!}"),
-                    subtitle: Text("${person.lastName!}"),
+                    title: Text("${todo[index].firstName!}"),
+                    subtitle: Text("${todo[index].lastName!}"),
                   ),
-                ),
-              ),
-            )
-            .toList(),
-      ),
+                ));
+          },
+          itemCount: todo.length),
     );
   }
 }
@@ -62,7 +58,7 @@ class Person {
 }
 
 var pro = [
-  Person(firstName: "Stalin", lastName: "Thomas"),
+  Person(firstName: "Kamal", lastName: "Srinivasan"),
   Person(firstName: "Mervin", lastName: "Thomas"),
 ];
 
